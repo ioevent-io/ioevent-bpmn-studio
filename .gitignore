@@ -1,0 +1,63 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+package-lock.json
+dist/
+build/
+diagrams/
+.env
+out
+dist
+node_modules
+.vscode-test/
+*.vsix
+
+# React
+build/
+coverage/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Temp files
+*.swp
+*.swo
+*.tmp
+
+# IDE-specific files
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Other
+*.bak
+*.old
+*.pid
+*.seed
+
+# Package distribution
+*.tgz
+*.zip
+
+# Test output
+coverage/
+
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# VS Code extension build artifacts
+.vscode-test/

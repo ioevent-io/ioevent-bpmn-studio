@@ -1,0 +1,30 @@
+# TypeScript sources
+src/**
+**/*.ts
+**/*.map
+
+# Configuration et outils de dev
+.vscode/**
+.vscode-test/**
+**/.vscode-test.*
+*.log
+*.vsix
+
+# Tests et couverture
+test/
+tests/
+coverage/
+
+# Fichiers inutiles
+.vscodeignore
+.gitignore
+README.md
+CHANGELOG.md
+LICENCE
+vsc-extension-quickstart.md
+
+# Config TypeScript / ESLint
+tsconfig.json
+**/tsconfig.json
+**/eslint.config.*
+

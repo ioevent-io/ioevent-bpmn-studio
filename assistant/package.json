@@ -1,0 +1,120 @@
+{
+  "name": "ioevent-studio",
+  "displayName": "IOEvent BPMN Studio",
+  "description": "Automatically generate and optimize BPMN workflows from natural language descriptions using AI-powered processing.",
+  "version": "0.1.4",
+  "icon": "media/images/code_once.png",
+  "publisher": "IOEvent",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Visualization",
+    "Other"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ioevent-io/ioevent-bpmn-studio"
+  },
+  "homepage": "https://www.ioevent.io/",
+  "keywords": [
+    "bpmn",
+    "diagram",
+    "workflow",
+    "generator",
+    "editor",
+    "ai",
+    "automation"
+  ],
+  "activationEvents": [
+    "onView:assistantView"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "assistantSidebar",
+          "title": "IOEvent BPMN Studio ",
+          "icon": "media/images/code_once.png"
+        }
+      ]
+    },
+    "views": {
+      "assistantSidebar": [
+        {
+          "id": "assistantView",
+          "name": "",
+          "type": "webview",
+          "icon": "media/images/code_once.png"
+        }
+      ]
+    },
+    "submenus": [
+      {
+        "id": "ioevent-studio.context",
+        "label": "IOEvent BPMN Studio"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "submenu": "ioevent-studio.context",
+          "group": "navigation",
+          "when": "resourceExtname == .bpmn"
+        }
+      ],
+      "ioevent-studio.context": [
+        {
+          "command": "ioevent-studio.addFileToAssistant",
+          "group": "1_actions"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "ioevent-studio.addFileToAssistant",
+        "title": "Add file to assistant",
+        "category": "IOEvent BPMN Studio"
+      },
+      {
+        "command": "assistantView.focus",
+        "title": "Focus Assistant View",
+        "category": "IOEvent BPMN Studio"
+      }
+    ]
+  },
+  "configuration": {
+    "title": "Ioevent BPMN Studio",
+    "properties": {
+      "ioeventstudio.apiUrl": {
+        "type": "string",
+        "default": "http://localhost:52004",
+        "description": "URL of the Ioevent Designer backend API",
+        "scope": "application"
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "@typescript-eslint/eslint-plugin": "^8.22.0",
+    "@typescript-eslint/parser": "^8.22.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.19.0",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.9.0"
+  }
+}
